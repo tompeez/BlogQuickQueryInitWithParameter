@@ -23,12 +23,16 @@ public class QuickQueryBean {
     private String dummy;
     private ComponentReference quickQuery;
 
+    /**
+     * Setter for Dummy property.
+     * @param dummy
+     */
     public void setDummy(String dummy) {
         this.dummy = dummy;
     }
 
     /**
-     * getter for a string value names dummy in EL
+     * getter for a string value names dummy in EL.
      * @return value of the dummy property
      */
     public String getDummy() {
@@ -72,8 +76,7 @@ public class QuickQueryBean {
     }
 
 
-    // The code below should be in a Utility clas
-    public Object invokeMethodExpression(String expr, Class returnType, Class[] argTypes, Object[] args) {
+    private Object invokeMethodExpression(String expr, Class returnType, Class[] argTypes, Object[] args) {
 
         FacesContext fc = FacesContext.getCurrentInstance();
         ELContext elctx = fc.getELContext();
@@ -82,12 +85,12 @@ public class QuickQueryBean {
         return methodExpr.invoke(elctx, args);
     }
 
-    public Object invokeMethodExpression(String expr, Class returnType, Class argType, Object argument) {
+    private Object invokeMethodExpression(String expr, Class returnType, Class argType, Object argument) {
         return invokeMethodExpression(expr, returnType, new Class[] { argType }, new Object[] { argument });
     }
 
     /**
-     * setter for component to ComponentReference
+     * setter for component to ComponentReference.
      * @param quickQuery the component
      */
     public void setQuickQuery(RichQuickQuery quickQuery) {
@@ -95,7 +98,7 @@ public class QuickQueryBean {
     }
 
     /**
-     * getter for the component from the component reference
+     * getter for the component from the component reference.
      * @return
      */
     public RichQuickQuery getQuickQuery() {
