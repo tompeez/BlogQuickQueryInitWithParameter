@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.9.1" id="indexPageDef"
+                Package="de.hahn.blog.quickqueryinitwithparameter.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Name="paramCity" Type="java.lang.String"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="variables" id="paramCity1">
+      <AttrNames>
+        <Item Value="paramCity"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

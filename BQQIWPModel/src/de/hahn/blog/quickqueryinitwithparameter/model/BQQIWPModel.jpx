@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BQQIWPModel"
+  Version="12.1.3.9.1"
+  SeparateXMLFiles="true"
+  PackageName="de.hahn.blog.quickqueryinitwithparameter.model">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../../../../BQQIWPModel.jpr"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
+    <Attr Name="_NamedConnection" Value="HRConn"/>
+    <Attr Name="_appModuleNames0" Value="de.hahn.blog.quickqueryinitwithparameter.model.adfbc.service.BQQIWPAppModule"/>
+  </DesignTime>
+  <Containee
+    Name="entities"
+    PackageName="de.hahn.blog.quickqueryinitwithparameter.model.adfbc.entities"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="service"
+    PackageName="de.hahn.blog.quickqueryinitwithparameter.model.adfbc.service"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="views"
+    PackageName="de.hahn.blog.quickqueryinitwithparameter.model.adfbc.views"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+</JboProject>

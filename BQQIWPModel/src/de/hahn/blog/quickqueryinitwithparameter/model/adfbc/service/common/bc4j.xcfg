@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="de.hahn.blog.quickqueryinitwithparameter.model.adfbc.service.BQQIWPAppModule">
+      <AppModuleConfig name="BQQIWPAppModuleLocal" jbo.project="de.hahn.blog.quickqueryinitwithparameter.model.BQQIWPModel" ApplicationName="de.hahn.blog.quickqueryinitwithparameter.model.adfbc.service.BQQIWPAppModule" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="de.hahn.blog.quickqueryinitwithparameter.model.adfbc.service.BQQIWPAppModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/HRConnDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="BQQIWPAppModuleShared" jbo.project="de.hahn.blog.quickqueryinitwithparameter.model.BQQIWPModel" ApplicationName="de.hahn.blog.quickqueryinitwithparameter.model.adfbc.service.BQQIWPAppModule" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="de.hahn.blog.quickqueryinitwithparameter.model.adfbc.service.BQQIWPAppModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/HRConnDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

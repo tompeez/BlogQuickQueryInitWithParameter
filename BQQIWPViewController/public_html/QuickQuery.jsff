@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Content -->
+                <af:panelGroupLayout layout="vertical" id="pgl2">
+                    <af:panelHeader text="Locations" id="ph1">
+                        <af:quickQuery label="Search" searchDesc="#{viewScope.QuickQueryBean.dummy}" id="qryId1"
+                                       value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                       model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                       queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}" binding="#{viewScope.QuickQueryBean.quickQuery}">
+                            <f:facet name="end">
+                                <af:commandLink text="Advanced" rendered="false" id="cl1"/>
+                            </f:facet>
+                        </af:quickQuery>
+                    </af:panelHeader>
+                    <af:table value="#{bindings.LocationsView1.collectionModel}" var="row" rows="#{bindings.LocationsView1.rangeSize}"
+                              emptyText="#{bindings.LocationsView1.viewable ? 'No data to display.' : 'Access Denied.'}" rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.LocationsView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.LocationsView1.collectionModel.makeCurrent}" rowSelection="single"
+                              fetchSize="#{bindings.LocationsView1.rangeSize}" filterModel="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                              queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}" filterVisible="true" varStatus="vs" partialTriggers="::qryId1"
+                              id="t1">
+                        <af:column sortProperty="#{bindings.LocationsView1.hints.LocationId.name}" filterable="true" sortable="true"
+                                   headerText="#{bindings.LocationsView1.hints.LocationId.label}" id="c1">
+                            <af:outputText value="#{row.LocationId}" shortDesc="#{bindings.LocationsView1.hints.LocationId.tooltip}" id="ot1">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.LocationsView1.hints.LocationId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.LocationsView1.hints.StreetAddress.name}" filterable="true" sortable="true"
+                                   headerText="#{bindings.LocationsView1.hints.StreetAddress.label}" id="c2">
+                            <af:outputText value="#{row.StreetAddress}" shortDesc="#{bindings.LocationsView1.hints.StreetAddress.tooltip}" id="ot2"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.LocationsView1.hints.PostalCode.name}" filterable="true" sortable="true"
+                                   headerText="#{bindings.LocationsView1.hints.PostalCode.label}" id="c3">
+                            <af:outputText value="#{row.PostalCode}" shortDesc="#{bindings.LocationsView1.hints.PostalCode.tooltip}" id="ot3"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.LocationsView1.hints.City.name}" filterable="true" sortable="true"
+                                   headerText="#{bindings.LocationsView1.hints.City.label}" id="c4">
+                            <af:outputText value="#{row.City}" shortDesc="#{bindings.LocationsView1.hints.City.tooltip}" id="ot4"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.LocationsView1.hints.StateProvince.name}" filterable="true" sortable="true"
+                                   headerText="#{bindings.LocationsView1.hints.StateProvince.label}" id="c5">
+                            <af:outputText value="#{row.StateProvince}" shortDesc="#{bindings.LocationsView1.hints.StateProvince.tooltip}" id="ot5"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.LocationsView1.hints.CountryId.name}" filterable="true" sortable="true"
+                                   headerText="#{bindings.LocationsView1.hints.CountryId.label}" id="c6">
+                            <af:outputText value="#{row.CountryId}" shortDesc="#{bindings.LocationsView1.hints.CountryId.tooltip}" id="ot6"/>
+                        </af:column>
+                    </af:table>
+                </af:panelGroupLayout>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</ui:composition>

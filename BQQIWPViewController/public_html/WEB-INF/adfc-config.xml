@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="index">
+    <page>/index.jsf</page>
+  </view>
+  <view id="showQuery">
+    <page>/showQuery.jsf</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>index</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>showQuery</from-outcome>
+      <to-activity-id>showQuery</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__3">
+    <from-activity-id>showQuery</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>back</from-outcome>
+      <to-activity-id>index</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>
